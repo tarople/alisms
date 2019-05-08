@@ -66,8 +66,6 @@ func (sd *Sender) Request(phoneNumbers string, signName string, tplCode string, 
 
 	payload := strings.NewReader(getPayload(sd.Params))
 
-	fmt.Println(getPayload(sd.Params))
-
 	req, _ := http.NewRequest("POST", API, payload)
 
 	req.Header.Set("x-sdk-client", "php/2.0.0")
