@@ -5,9 +5,8 @@
     ak := "ak"
     sk := "sk"
     
-    sender := alisms.New(ak, sk)
-    
-    result, err := sender.Request("手机号码", "短信签名", "模板code", "模板参数json字符串格式")
+    result, err := alisms.New(ak, sk).
+        Request("手机号码", "短信签名", "模板code", "模板参数json字符串格式")
     
     if err != nil {
         log.Fatalln(err)
