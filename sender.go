@@ -7,7 +7,6 @@ import (
 	"crypto/hmac"
 	"crypto/sha1"
 	b64 "encoding/base64"
-	"fmt"
 	"io"
 	"io/ioutil"
 	"net/http"
@@ -96,12 +95,7 @@ func getPayload(params map[string]string) (payload string) {
 // 设置为gmt时间
 func getGMTime() (string) {
 
-	t := time.Now().Add(-time.Hour * 8)
-
-	return fmt.Sprintf("%s", t.Format("2006-01-02")) +
-		"T" +
-		fmt.Sprintf("%s", t.Format("15:04:05")) +
-		"Z"
+	return time.Now().UTC().Format("2006-01-02T15:04:05Z")
 
 }
 
